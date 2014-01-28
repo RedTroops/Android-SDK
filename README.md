@@ -111,7 +111,7 @@ private initFinishListener initFinishedListener = new initFinishListener() {
 		public void onFail() {
 			// TODO Do on init failure
 		}
-	};
+	
 
 8) Whenever you want to show an HTML5/Image popup, call:
 
