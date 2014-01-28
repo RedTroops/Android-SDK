@@ -36,7 +36,7 @@ Follow the steps below to get your RedTroops SDK running:
 
 5) Edit your manifest as follows:
 
-Add the following permissions (Mandatory), change <PACKAGE-NAME> into your app's package name:
+Add the following permissions (Mandatory), change \<PACKAGE-NAME> into your app's package name:
 
 ```xml
 <!-- Permissions for RedTroops SDK-->
@@ -144,9 +144,9 @@ The icon must be in any drawable folder.
 
 2. The default icon for the Push Notification is ic_launcher. If a custom icon was not set using setPushNotificationIcon and ic_launcher was not found, the Push Notification will not appear.
 
-3. The user will not be notified if Google Play Services was not installed on their device.
+3. The user will not be notified if Google Play Services app was not installed on their device.
 
-4. Make sure that you clean and build your project each time you add a library, or change settings of Order and Export tab.
+4. Make sure that you clean and build your project each time you add a library or change settings of Order and Export tab.
 
 5. The test app will show errors if RedTroops SDK was not added. This can be done by changing the Java Build Path as documented in Setting Up RedTroops SDK In Your Project section.
 
