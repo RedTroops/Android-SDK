@@ -35,6 +35,7 @@ Follow the steps below to get your RedTroops SDK running:
 
 Add the following permissions (Mandatory), change <PACKAGE-NAME> into your app's package name:
 
+
 <!-- Permissions for RedTroops SDK-->
     <permission
         android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE"
@@ -50,6 +51,7 @@ Add the following permissions (Mandatory), change <PACKAGE-NAME> into your app's
 
 
 In application tag, add the following activities, receiver, service, and meta-data (Mandatory):
+
         <!-- RedTroops SDK (MANDATORY)-->
        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsNagActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
@@ -77,9 +79,11 @@ In application tag, add the following activities, receiver, service, and meta-da
 
 
 6) Go to your assets folder, and create a new file. Name it “redtroops.properties”. Add the following keys and their corresponding values. For example:
-gcm_sender_id=330435028307
-api_key=R0mLGV9uDFq875yT26L4omko27fYZ8nG
-app_id=4
+
+	gcm_sender_id=330435028307
+	api_key=R0mLGV9uDFq875yT26L4omko27fYZ8nG
+	app_id=4
+
 
 gcm_sender_id is the Project Number that you obtained from Google Cloud Console when you created the project.
 
@@ -91,9 +95,11 @@ app_id is the application id. You can obtain it from the address bar when you ar
 
 
 7) In your main activity's OnCreate, call:
-RedtroopsSDK.getInstance(this).init(initFinishedListener);
+
+	RedtroopsSDK.getInstance(this).init(initFinishedListener);
 
 Where initFinishedListener is a listener to declare as follows:
+
 private initFinishListener initFinishedListener = new initFinishListener() {
 		
 		@Override
@@ -108,20 +114,24 @@ private initFinishListener initFinishedListener = new initFinishListener() {
 	};
 
 8) Whenever you want to show an HTML5/Image popup, call:
-RedTroopsSDK.getInstance(this).showHTML5ImagePopup();
+
+	RedTroopsSDK.getInstance(this).showHTML5ImagePopup();
 
 It is preferred to call this in initFinishedListener's onSuccess() so that it is made sure that the initialization has finished.
 
 9) Whenever you want to show the banner list, call:
-RedTroopsSDK.getInstance(this).showBannerList();
+
+	RedTroopsSDK.getInstance(this).showBannerList();
 
 10) To end your session, add the following to your last activity's onDestroy:
-RedTroopsSDK.getInstance(this).endSession();
+
+	RedTroopsSDK.getInstance(this).endSession();
 
 This should only be called once after each app run when the user is no longer using the app.
 
 11) Optional: By default the icon for Push Notification is “ic_launcher”, you may change it by calling:
-RedTroopsSDK.getInstance(this).setPushNotificationIcon("ic_launcher");
+
+	RedTroopsSDK.getInstance(this).setPushNotificationIcon("ic_launcher");
 
 The icon must be in any drawable folder.
 Important Notes
