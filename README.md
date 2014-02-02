@@ -1,10 +1,10 @@
-#RedTroops SDK for Android
+#RedTroops SDK 1.0 for Android
 
 **Requirements: Android 2.3.3+ (API 10)**
 
 ###Getting Started
 
-RedTroops SDK currently features Push Notifications, HTML5/Image Popups, and Banner Lists. In order to have the Push Notifications ready for RedTroops, you must set up Google Cloud Messaging. 
+RedTroops SDK 1.0currently features Push Notifications, HTML5/Image Popups, and More Page-Banners. In order to have the Push Notifications ready for RedTroops, you must set up Google Cloud Messaging. 
 
 ###Setting Up Google Cloud Messaging (Push Notifications)
 
@@ -21,9 +21,9 @@ You must have now Google Play Services library in your project. You must have a 
 Android Support Library must be added. This can be done by right-clicking on your project → Android Tools → Add Support Library. Android Private Libraries must be checked in Order and Export.
 
 
-###Setting Up RedTroops SDK In Your Project
+###Setting Up RedTroops SDK 1.0 In Your Project
 
-Follow the steps below to get your RedTroops SDK running:
+Follow the steps below to get your RedTroops SDK 1.0 running:
 
 1) Download the SDK from RedTroops' website.
 
@@ -41,24 +41,25 @@ Add the following permissions (Mandatory), change \<PACKAGE-NAME> into your app'
 ```xml
 <!-- Permissions for RedTroops SDK-->
     <permission
-        android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE"
+        android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     
     <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower than 14 (4.0.4), you may remove it otherwise -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+   <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     
     <uses-permission android:name="android.permission.INTERNET"/>
 	<!-- End of Permissions for RedTroops SDK-->
 ```
 
 In application tag, add the following activities, receiver, service, and meta-data (Mandatory):
+
 ```xml
         <!-- RedTroops SDK (MANDATORY)-->
-       <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsNagActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMoreAppActivity" 
+       <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsPopupActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMorePageActivity" 
             android:screenOrientation="portrait"/>
     
         <!-- GCM Receiver for RedTroops SDK -->
@@ -68,7 +69,7 @@ In application tag, add the following activities, receiver, service, and meta-da
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="<PACKAGE-NAME>" />
+                <category android:name="com.RedTroops.RedTroopsSDK.Test" />
             </intent-filter>
         </receiver>
         
@@ -122,9 +123,9 @@ private initFinishListener initFinishedListener = new initFinishListener() {
 ```
 It is preferred to call this in initFinishedListener's onSuccess() so that it is made sure that the initialization has finished.
 
-9) Whenever you want to show the banner list, call:
+9) Whenever you want to show the more page, call:
 ```java
-	RedTroopsSDK.getInstance(this).showBannerList();
+	RedTroopsSDK.getInstance(this).showMorePage();
 ```
 10) To end your session, add the following to your last activity's onDestroy:
 ```java
