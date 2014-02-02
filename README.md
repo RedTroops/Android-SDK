@@ -4,7 +4,7 @@
 
 ###Getting Started
 
-RedTroops SDK 1.0currently features Push Notifications, HTML5/Image Popups, and More Page-Banners. In order to have the Push Notifications ready for RedTroops, you must set up Google Cloud Messaging. 
+RedTroops SDK 1.0 currently features Push Notifications, HTML5/Image Popups, and More Page-Banners. In order to have the Push Notifications ready for RedTroops, you must set up Google Cloud Messaging. 
 
 ###Setting Up Google Cloud Messaging (Push Notifications)
 
