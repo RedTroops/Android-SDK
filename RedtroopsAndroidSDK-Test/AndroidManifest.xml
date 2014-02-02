@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.RedTroops.RedTroopsSDK.Test"
-    android:versionCode="2"
-    android:versionName="1.2" >
+    android:versionCode="3"
+    android:versionName="1.2.1" >
 
     <uses-sdk android:minSdkVersion="10" />
     
@@ -33,9 +33,9 @@
         </activity>
         
         <!-- RedTroops SDK (MANDATORY)-->
-       <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsNagActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMoreAppActivity" 
+       <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsPopupActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMorePageActivity" 
             android:screenOrientation="portrait"/>
     
         <!-- GCM Receiver for RedTroops SDK -->

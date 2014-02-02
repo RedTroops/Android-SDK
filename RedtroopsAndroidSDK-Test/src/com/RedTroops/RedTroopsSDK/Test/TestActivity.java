@@ -2,7 +2,6 @@ package com.RedTroops.RedTroopsSDK.Test;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,15 +21,15 @@ public class TestActivity extends Activity {
 		mBtnMoreApp.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				RedTroopsSDK.getInstance(TestActivity.this).showBannerList();
+				RedTroopsSDK.getInstance(TestActivity.this).showMorePage();
 			}
 		});
 
 		RedTroopsSDK.getInstance(this).init(initFinishedListener);
 		
 		//Optional
-		RedTroopsSDK.getInstance(this).setPushNotificationIcon("ic_launcher");
-
+		RedTroopsSDK.getInstance(this).setPushNotificationIcon("ic_launcher");	
+		
 	}
 
 	private initFinishListener initFinishedListener = new initFinishListener() {
