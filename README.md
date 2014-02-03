@@ -4,7 +4,7 @@
 
 ###Getting Started
 
-RedTroops SDK 1.0 currently features Push Notifications, HTML5/Image Popups, and More Page-Banners. In order to have the Push Notifications ready for RedTroops, you must set up Google Cloud Messaging. 
+RedTroops SDK 1.0 currently features Push Notifications, HTML5/Image Popups, and More Page - Banners. In order to have the Push Notifications ready for RedTroops, you must set up Google Cloud Messaging. 
 
 ###Setting Up Google Cloud Messaging (Push Notifications)
 
@@ -39,11 +39,11 @@ Follow the steps below to get your RedTroops SDK 1.0 running:
 Add the following permissions (Mandatory), change \<PACKAGE-NAME> into your app's package name:
 
 ```xml
-<!-- Permissions for RedTroops SDK-->
+	<!-- Permissions for RedTroops SDK-->
     <permission
-        android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE"
+        android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE" />
+    <uses-permission android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     
     <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower than 14 (4.0.4), you may remove it otherwise -->
@@ -56,7 +56,7 @@ Add the following permissions (Mandatory), change \<PACKAGE-NAME> into your app'
 In application tag, add the following activities, receiver, service, and meta-data (Mandatory):
 
 ```xml
-        <!-- RedTroops SDK (MANDATORY)-->
+ 	<!-- RedTroops SDK (MANDATORY)-->
        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsPopupActivity"
             android:theme="@android:style/Theme.Black.NoTitleBar" />
         <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMorePageActivity" 
@@ -69,7 +69,7 @@ In application tag, add the following activities, receiver, service, and meta-da
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="com.RedTroops.RedTroopsSDK.Test" />
+                <category android:name="<PACKAGE-NAME>" />
             </intent-filter>
         </receiver>
         
