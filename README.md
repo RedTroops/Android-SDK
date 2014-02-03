@@ -1,3 +1,5 @@
+![alt tag](http://redtroops.com/public/images/redtroops_logo.png)
+
 #RedTroops SDK 1.0 for Android
 
 **Requirements: Android 2.3.3+ (API 10)**
