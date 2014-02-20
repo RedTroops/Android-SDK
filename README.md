@@ -1,4 +1,4 @@
-![alt tag](http://redtroops.com/public/images/redtroops_logo.png)
+![alt tag](http://www.redtroops.com/images/RedTroopsLogo.png)
 
 #RedTroops SDK 1.0 for Android
 
