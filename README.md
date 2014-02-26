@@ -1,4 +1,6 @@
-![alt tag](http://www.redtroops.com/images/RedTroopsLogo.png)
+<p align="center">
+<img src="http://www.redtroops.com/images/RedTroopsLogo.png" alt="RedTroops" width="150">
+</p>
 
 #RedTroops SDK 1.0 for Android
 
