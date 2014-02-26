@@ -9,7 +9,7 @@ package com.RedTroops.RedTroopsSDK.Test;
 
 public final class Manifest {
     public static final class permission {
-        /**  Permissions for RedTroops SDK
+        /**  Permissions for RedTroops SDK 
          */
         public static final String C2D_MESSAGE="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE";
     }

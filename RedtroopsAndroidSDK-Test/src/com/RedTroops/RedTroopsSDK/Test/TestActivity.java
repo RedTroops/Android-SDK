@@ -10,7 +10,7 @@ import com.RedTroops.RedTroopsSDK.RedTroopsSDK;
 import com.RedTroops.RedTroopsSDK.RedTroopsSDK.initFinishListener;
 
 public class TestActivity extends Activity {
-	private Button mBtnMoreApp;
+	private Button mBtnMoreApp, mBtnPopup;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,19 @@ public class TestActivity extends Activity {
 		setContentView(R.layout.test);
 
 		mBtnMoreApp = (Button) findViewById(R.id.btnMore);
+		mBtnPopup = (Button) findViewById(R.id.btnPopup);
+		
 		mBtnMoreApp.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				RedTroopsSDK.getInstance(TestActivity.this).showMorePage();
+			}
+		});
+		
+		mBtnPopup.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				RedTroopsSDK.getInstance(TestActivity.this).showHTML5ImagePopup();
 			}
 		});
 
@@ -37,8 +46,6 @@ public class TestActivity extends Activity {
 		@Override
 		public void onSuccess() {
 			// TODO Do on init success. Most probably showHTML5ImagePopup();
-			RedTroopsSDK.getInstance(TestActivity.this).showHTML5ImagePopup();
-			
 		}
 
 		@Override
