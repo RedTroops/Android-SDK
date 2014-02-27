@@ -9,16 +9,10 @@
         android:targetSdkVersion="17" />
 
     <!-- Permissions for RedTroops SDK -->
-    <permission
-        android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower than 14 (4.0.4), you may remove it otherwise -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <!-- End of Permissions for RedTroops SDK -->
 
     <application
