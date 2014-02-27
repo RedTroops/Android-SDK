@@ -37,23 +37,18 @@ Follow the steps below to get your RedTroops SDK 1.0 running:
 
 4) Go to Order and Export tab, and place a check for RedTroopsSDK.
 
-
 5) Edit your manifest as follows:
 
 Add the following permissions (Mandatory), change \<PACKAGE-NAME> into your app's package name:
 
 ```xml
 	<!-- Permissions for RedTroops SDK-->
-    <permission
-        android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-    <uses-permission android:name="<PACKAGE-NAME>.permission.C2D_MESSAGE" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.INTERNET"/>
     
-    <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower than 14 (4.0.4), you may remove it otherwise -->
-   <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+      <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower
+		than 14 (4.0.4), you may remove it otherwise -->
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     
-    <uses-permission android:name="android.permission.INTERNET"/>
 	<!-- End of Permissions for RedTroops SDK-->
 ```
 
@@ -162,10 +157,11 @@ setPushNotificationIcon: Error setting Push Notification icon
 
 8. If another GCM intent service is to be used along side the RedTroops SDK intent service, they can be differentiated by getting the boolean “sdk” which is true for RedTroops SDK push notifications. An example of how to implement this safely:
 ```java
-if((intent.getExtras().containsKey("sdk")&&
-!intent.getExtras().getBoolean("sdk"))||
-!intent.getExtras().containsKey("sdk"))
-//Handle the non-sdk intent.
+ 	if((extras.containsKey("sdk")&&
+	   !Boolean.parseBoolean(extras.getString("sdk")))||
+	   !extras.containsKey("sdk"))
+	 //Handle the non-sdk intent.
+
 ```
 
 **Refer to the test app RedtroopsSDK-Test that is available alongside the SDK.**
