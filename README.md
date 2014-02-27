@@ -44,6 +44,7 @@ Add the following permissions (Mandatory), change \<PACKAGE-NAME> into your app'
 ```xml
 	<!-- Permissions for RedTroops SDK-->
 	<uses-permission android:name="android.permission.INTERNET"/>
+  	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     
       <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower
 		than 14 (4.0.4), you may remove it otherwise -->
