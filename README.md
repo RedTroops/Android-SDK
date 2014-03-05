@@ -58,26 +58,26 @@ In application tag, add the following activities, receiver, service, and meta-da
 ```xml
  	<!-- RedTroops SDK (MANDATORY)-->
        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsPopupActivity"
-            android:theme="@android:style/Theme.Black.NoTitleBar" />
+            android:theme="@android:style/Theme.Black.NoTitleBar"/>
         <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMorePageActivity" 
             android:screenOrientation="portrait"/>
     
         <!-- GCM Receiver for RedTroops SDK -->
         <receiver
             android:name="com.RedTroops.RedTroopsSDK.gcm.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
 
-                <category android:name="<PACKAGE-NAME>" />
+                <category android:name="<PACKAGE-NAME>"/>
             </intent-filter>
         </receiver>
         
-        <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService" />
+        <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService"/>
         
             <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:value="@integer/google_play_services_version"/>
             
         <!-- End of RedTroops SDK (MANDATORY)-->
 ```
