@@ -29,7 +29,7 @@ Android Support Library must be added. This can be done by right-clicking on you
 
 Follow the steps below to get your RedTroops SDK 1.0 running:
 
-1) Download the SDK from RedTroops' website.
+1) <a href="https://github.com/RedTroops/Android-SDK" target="_blank">Download the SDK</a>.
 
 2) Right-click on your project from the Package Explorer in Eclipse → Build Path → Configure Build Path.
 
