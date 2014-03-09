@@ -166,3 +166,5 @@ setPushNotificationIcon: Error setting Push Notification icon
 ```
 
 **Refer to the test app RedtroopsSDK-Test that is available alongside the SDK.**
+
+**If you need any help or for more information, please visit:**  <a href="http://docs.redtroops.com" class="btn">RedTroops Docs</a>
