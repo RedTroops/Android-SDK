@@ -211,7 +211,6 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int btnMore=0x7f060007;
         public static final int btnPopup=0x7f060006;
         public static final int hybrid=0x7f060004;
         public static final int imageView1=0x7f060005;

@@ -10,24 +10,16 @@ import com.RedTroops.RedTroopsSDK.RedTroopsSDK;
 import com.RedTroops.RedTroopsSDK.RedTroopsSDK.initFinishListener;
 
 public class TestActivity extends Activity {
-	private Button mBtnMoreApp, mBtnPopup;
+	private Button mBtnPopup;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test);
 
-		mBtnMoreApp = (Button) findViewById(R.id.btnMore);
 		mBtnPopup = (Button) findViewById(R.id.btnPopup);
 
 		RedTroopsSDK.getInstance(this).init(initFinishedListener);
-
-		mBtnMoreApp.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				RedTroopsSDK.getInstance(TestActivity.this).showMorePage();
-			}
-		});
 
 		mBtnPopup.setOnClickListener(new OnClickListener() {
 			@Override

@@ -56,7 +56,6 @@ int drawable ic_plusone_medium_off_client 0x7f020019
 int drawable ic_plusone_small_off_client 0x7f02001a
 int drawable ic_plusone_standard_off_client 0x7f02001b
 int drawable ic_plusone_tall_off_client 0x7f02001c
-int id btnMore 0x7f060007
 int id btnPopup 0x7f060006
 int id hybrid 0x7f060004
 int id imageView1 0x7f060005
