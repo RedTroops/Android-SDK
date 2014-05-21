@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.RedTroops.RedTroopsSDK.Test"
-    android:versionCode="2"
-    android:versionName="1.2" >
+    android:versionCode="4"
+    android:versionName="1.2.2" >
 
-    <uses-sdk android:minSdkVersion="10" />
-    
-	<!-- Permissions for RedTroops SDK-->
-    <permission
-        android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-    <uses-permission android:name="com.RedTroops.RedTroopsSDK.Test.permission.C2D_MESSAGE" />
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="17" />
+
+    <!-- Permissions for RedTroops SDK -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     
     <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower than 14 (4.0.4), you may remove it otherwise -->
-   <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-	<!-- End of Permissions for RedTroops SDK-->
-    
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- End of Permissions for RedTroops SDK -->
+
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:label="@string/app_name"
-            android:name="com.RedTroops.RedTroopsSDK.Test.TestActivity" >
-            <intent-filter >
+            android:name="com.RedTroops.RedTroopsSDK.Test.TestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <!-- RedTroops SDK (MANDATORY)-->
-       <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsNagActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.RedTroops.RedTroopsSDK.RedTroopsMoreAppActivity" 
-            android:screenOrientation="portrait"/>
-    
+
+        <!-- RedTroops SDK (MANDATORY) -->
+        <activity
+            android:name="com.RedTroops.RedTroopsSDK.RedTroopsPopupActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.RedTroops.RedTroopsSDK.RedTroopsMorePageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
         <!-- GCM Receiver for RedTroops SDK -->
         <receiver
             android:name="com.RedTroops.RedTroopsSDK.gcm.GcmBroadcastReceiver"
@@ -48,14 +50,14 @@
                 <category android:name="com.RedTroops.RedTroopsSDK.Test" />
             </intent-filter>
         </receiver>
-        
+
         <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService" />
-        
-            <meta-data
+
+        <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-            
-        <!-- End of RedTroops SDK (MANDATORY)-->
+
+        <!-- End of RedTroops SDK (MANDATORY) -->
     </application>
 
 </manifest>

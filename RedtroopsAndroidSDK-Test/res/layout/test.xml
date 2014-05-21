@@ -5,14 +5,35 @@
     android:orientation="vertical" >
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_marginTop="30dp"
+        android:text="RedTroops-SDK Test App" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_launcher" />
+    
+    <Button
+        android:id="@+id/btnPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Show Popup" />
 
     <Button
         android:id="@+id/btnMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="More App" />
+        android:layout_gravity="center"
+        android:text="Show More Page" />
 
 </LinearLayout>

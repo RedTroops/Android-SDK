@@ -2,7 +2,6 @@ package com.RedTroops.RedTroopsSDK.Test;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -11,7 +10,7 @@ import com.RedTroops.RedTroopsSDK.RedTroopsSDK;
 import com.RedTroops.RedTroopsSDK.RedTroopsSDK.initFinishListener;
 
 public class TestActivity extends Activity {
-	private Button mBtnMoreApp;
+	private Button mBtnMoreApp, mBtnPopup;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -19,16 +18,26 @@ public class TestActivity extends Activity {
 		setContentView(R.layout.test);
 
 		mBtnMoreApp = (Button) findViewById(R.id.btnMore);
+		mBtnPopup = (Button) findViewById(R.id.btnPopup);
+
+		RedTroopsSDK.getInstance(this).init(initFinishedListener);
+
 		mBtnMoreApp.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				RedTroopsSDK.getInstance(TestActivity.this).showBannerList();
+				RedTroopsSDK.getInstance(TestActivity.this).showMorePage();
 			}
 		});
 
-		RedTroopsSDK.getInstance(this).init(initFinishedListener);
+		mBtnPopup.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				RedTroopsSDK.getInstance(TestActivity.this)
+						.showHTML5ImagePopup();
+			}
+		});
 		
-		//Optional
+		// Optional
 		RedTroopsSDK.getInstance(this).setPushNotificationIcon("ic_launcher");
 
 	}
@@ -38,8 +47,6 @@ public class TestActivity extends Activity {
 		@Override
 		public void onSuccess() {
 			// TODO Do on init success. Most probably showHTML5ImagePopup();
-			RedTroopsSDK.getInstance(TestActivity.this).showHTML5ImagePopup();
-			
 		}
 
 		@Override
@@ -49,7 +56,7 @@ public class TestActivity extends Activity {
 	};
 
 	@Override
-	protected void onDestroy(){
+	protected void onDestroy() {
 		RedTroopsSDK.getInstance(this).endSession();
 
 		super.onDestroy();
