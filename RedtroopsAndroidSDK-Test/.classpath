@@ -6,6 +6,5 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/google-play-services_lib"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="libs/RedTroops_SDKv1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

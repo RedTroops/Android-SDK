@@ -2,6 +2,14 @@
 <resources>
 
     <string name="hello">Hello World!</string>
-    <string name="app_name">RedtroopsAndroidSDK-Test</string>
+    <string name="app_name">Redtroops SDK Test</string>
+    <string name="welcome_text">Welcome to RedTroops SDK Test App</string>
+    <string name="first_text">Hey there! Check out our HTML5 Interstitial Ad. You basically can place text, images, videos, buttons and what ever you want
+into this advertisement.</string>
+    <string name="second_text">Nice eh? All you have to do in order to get that Interstitial advertisement is to call:\n\nRedTroops.getInstance\n(Context).showInterstitialAd\n(Activity);\n\n
+So, our second type of advertisement is the Native advertisement. This is an advertisement that you place in your XML layout file such as this
+one below:</string>
+    <string name="third_text">Last but not least, the Banner advertisement. This advertisement is an overlay advertisement that goes usually at the top or the bottom of the activity. Hit the button to see it!</string>
+    <string name="fourth_text">To get one of those on the screen, call:\n\nRedTroops.getInstance\n(Context).showBanner\n(Activity, Gravity);</string>
 
 </resources>

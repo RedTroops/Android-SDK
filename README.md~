@@ -106,7 +106,7 @@ Where `initFinishedListener` is a listener to declare as follows:
 
 		@Override
 		public void onSuccess() {
-			// TODO Do on init success. Most probably showInterstitialAd();
+			// TODO Do on init success. Most probably showInterstitialAd() and showBanner();
 		}
 
 		@Override

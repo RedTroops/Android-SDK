@@ -1,56 +1,55 @@
 package com.RedTroops.RedTroopsSDK.Test;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
-import com.RedTroops.RedTroopsSDK.RedTroopsSDK;
-import com.RedTroops.RedTroopsSDK.RedTroopsSDK.initFinishListener;
+import com.RedTroops.RedTroopsSDK.RedTroops;
+import com.RedTroops.RedTroopsSDK.RedTroops.initFinishListener;
 
 public class TestActivity extends Activity {
-	private Button mBtnPopup;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test);
 
-		mBtnPopup = (Button) findViewById(R.id.btnPopup);
+		RedTroops.getInstance(this).init(initFinishedListener);
 
-		RedTroopsSDK.getInstance(this).init(initFinishedListener);
+	}
 
-		mBtnPopup.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				RedTroopsSDK.getInstance(TestActivity.this)
-						.showHTML5ImagePopup();
-			}
-		});
-		
-		// Optional
-		RedTroopsSDK.getInstance(this).setPushNotificationIcon("ic_launcher");
-
+	public void ShowInterstitial(View v){
+		RedTroops.getInstance(this).showInterstitialAd(this);
 	}
 
 	private initFinishListener initFinishedListener = new initFinishListener() {
 
 		@Override
 		public void onSuccess() {
-			// TODO Do on init success. Most probably showHTML5ImagePopup();
+			// TODO Do on init success. Most probably showInterstitialAd(Activity);
 		}
 
 		@Override
 		public void onFail() {
-			// TODO Do on init failure
+			// TODO Do on init failure. Are you connected to the internet? Check your LogCat.
 		}
 	};
 
 	@Override
 	protected void onDestroy() {
-		RedTroopsSDK.getInstance(this).endSession();
-
+		RedTroops.getInstance(this).endSession();
 		super.onDestroy();
 	}
+
+	// This is implemented to disable calling onCreate when the screen orientation changes.
+	// Not a part of RedTroops SDK.
+	@Override
+	public void onConfigurationChanged(Configuration newConfig){
+		super.onConfigurationChanged(newConfig);
+	}
+
 }

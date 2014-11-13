@@ -4,9 +4,12 @@
  * aapt tool from the resource data it found.  It
  * should not be modified by hand.
  */
-package com.google.android.gms;
+package com.RedTroops.RedTroopsSDK;
 
 public final class R {
+	public static final class array {
+		public static final int image_extensions = 0x7f0a0000;
+	}
 	public static final class attr {
 		public static final int adSize = 0x7f010000;
 		public static final int adSizes = 0x7f010001;
@@ -95,27 +98,37 @@ public final class R {
 		public static final int common_signin_btn_text_normal_light = 0x7f020015;
 		public static final int common_signin_btn_text_pressed_dark = 0x7f020016;
 		public static final int common_signin_btn_text_pressed_light = 0x7f020017;
+		public static final int ic_launcher = 0x7f020018;
 		public static final int ic_plusone_medium_off_client = 0x7f020019;
 		public static final int ic_plusone_small_off_client = 0x7f02001a;
 		public static final int ic_plusone_standard_off_client = 0x7f02001b;
 		public static final int ic_plusone_tall_off_client = 0x7f02001c;
+		public static final int image_error = 0x7f02001d;
 		public static final int powered_by_google_dark = 0x7f02001e;
 		public static final int powered_by_google_light = 0x7f02001f;
+		public static final int web_image = 0x7f020025;
 	}
 	public static final class id {
 		public static final int book_now = 0x7f080010;
+		public static final int btnClose = 0x7f08001a;
 		public static final int buyButton = 0x7f08000a;
 		public static final int buy_now = 0x7f08000f;
 		public static final int buy_with_google = 0x7f08000e;
 		public static final int classic = 0x7f080011;
+		public static final int flMoreView = 0x7f080014;
+		public static final int flNagView = 0x7f080018;
 		public static final int grayscale = 0x7f080012;
 		public static final int holo_dark = 0x7f080005;
 		public static final int holo_light = 0x7f080006;
 		public static final int hybrid = 0x7f080004;
+		public static final int ivMoreAppitem = 0x7f080015;
+		public static final int ivWebImageView = 0x7f08001e;
+		public static final int lvMoreApp = 0x7f080016;
 		public static final int match_parent = 0x7f08000c;
 		public static final int monochrome = 0x7f080013;
 		public static final int none = 0x7f080000;
 		public static final int normal = 0x7f080001;
+		public static final int pbLoading = 0x7f080017;
 		public static final int production = 0x7f080007;
 		public static final int sandbox = 0x7f080008;
 		public static final int satellite = 0x7f080002;
@@ -123,11 +136,20 @@ public final class R {
 		public static final int strict_sandbox = 0x7f080009;
 		public static final int terrain = 0x7f080003;
 		public static final int wrap_content = 0x7f08000d;
+		public static final int wvNagView = 0x7f080019;
 	}
 	public static final class integer {
 		public static final int google_play_services_version = 0x7f090000;
 	}
+	public static final class layout {
+		public static final int banner_ad_view = 0x7f030000;
+		public static final int more_item_view = 0x7f030001;
+		public static final int more_view = 0x7f030002;
+		public static final int nag_view = 0x7f030003;
+		public static final int web_imgview_layout = 0x7f030005;
+	}
 	public static final class string {
+		public static final int app_name = 0x7f07001a;
 		public static final int common_google_play_services_enable_button = 0x7f07000b;
 		public static final int common_google_play_services_enable_text = 0x7f07000a;
 		public static final int common_google_play_services_enable_title = 0x7f070009;
@@ -156,6 +178,7 @@ public final class R {
 		public static final int wallet_buy_button_place_holder = 0x7f070019;
 	}
 	public static final class style {
+		public static final int Animation = 0x7f050005;
 		public static final int Theme_IAPTheme = 0x7f050000;
 		public static final int WalletFragmentDefaultButtonTextAppearance = 0x7f050003;
 		public static final int WalletFragmentDefaultDetailsHeaderTextAppearance = 0x7f050002;
