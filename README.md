@@ -50,7 +50,7 @@ Add the following permissions (Mandatory):
 	<!-- End of Permissions for RedTroops SDK-->
 ```
 
-In application tag, add the following activity, receiver, service, and Google Play Services' meta-data (Mandatory). Change <PACKAGE-NAME> into the app's package name:
+In application tag, add the following activity, receiver, service, and Google Play Services' meta-data (Mandatory). Change PACKAGE-NAME into the app's package name:
 
 ```xml
         <!-- RedTroops SDK (MANDATORY) -->
@@ -96,7 +96,9 @@ In application tag, add the following activity, receiver, service, and Google Pl
 *gcm_sender_id* is the Project Number that you obtained from Google Cloud Console when you created the project.
 *api_key* is the Api Key which is listed in the app details in My Apps at RedTroops developer website.
 
-7) In your main activity's `onCreate`, call:
+####Editing the Source Code
+
+1) In your main activity's `onCreate`, call:
 ```java
 	RedTroops.getInstance(this).init(initFinishedListener);
 ```
@@ -116,14 +118,14 @@ Where `initFinishedListener` is a listener to declare as follows:
 	};
 ```
 
-8) To show an Interstitial Ad, call:
+2) To show an Interstitial Ad, call:
 ```java
 	RedTroops.getInstance(this).showInterstitialAd(this);
 ```
 
 It is preferred to call this in `initFinishedListener`'s `onSuccess()` so that it is made sure that the initialization has finished. The parameter passed to `showInterstitialAd` must be an activity.
 
-9) To end your session, add the following to your last activity's `onDestroy`:
+3) To end your session, add the following to your last activity's `onDestroy`:
 ```java
 	RedTroops.getInstance(this).endSession();
 ```
