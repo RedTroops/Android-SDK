@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.RedTroops.CocosTest"
+      android:versionCode="1"
+      android:versionName="1.0"
+      android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="9"/>
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <application android:label="@string/app_name"
+                 android:icon="@drawable/icon">
+					 
+        <!-- Tell Cocos2dxActivity the name of our .so -->
+        <meta-data android:name="android.app.lib_name"
+	              android:value="cocos2dcpp" />
+
+        <activity android:name="org.cocos2dx.cpp.AppActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:configChanges="orientation">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- RedTroops SDK (MANDATORY) -->
+        <activity
+            android:name="com.RedTroops.RedTroopsSDK.Interstitial"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- GCM Receiver for RedTroops SDK -->
+        <receiver
+            android:name="com.RedTroops.RedTroopsSDK.gcm.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.RedTroops.CocosTest" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService" />
+
+        <!-- Install Referrer -->
+        <receiver
+            android:name="com.RedTroops.RedTroopsSDK.ReferrerReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="gcm_sender_id" android:value="gcm330435028307"/>
+        <meta-data
+            android:name="api_key" android:value="7af155e90e364f3ee1b90ac3832b63ee"/>
+        <!-- End of RedTroops SDK (MANDATORY) -->
+        
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+    <supports-screens android:anyDensity="true"
+                      android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:xlargeScreens="true"/>
+
+    <!-- Permissions for RedTroops SDK-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+      <!-- GET_ACCOUNTS permission is only needed if the minSdkVersion is lower
+        than 14 (4.0.4), you may remove it otherwise -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
+    <!-- End of Permissions for RedTroops SDK-->
+</manifest> 

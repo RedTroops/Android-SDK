@@ -51,6 +51,16 @@
             android:onClick="ShowInterstitial"
             android:text="Show Interstitial Ad"
             android:textColor="#FFffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounded_button_clicked"
+            android:onClick="NextActivity"
+            android:text="Next Activity"
+            android:textColor="#FFffffff" />
         
        <com.RedTroops.RedTroopsSDK.NativeAd
             android:layout_gravity="center"

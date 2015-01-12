@@ -24,7 +24,6 @@ public class TestActivity extends Activity {
 	
 	@Override
 	protected void onStart() {
-		RedTroops.getInstance(TestActivity.this).showBanner(TestActivity.this, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
 		super.onStart();
 	}
 
@@ -59,9 +58,15 @@ public class TestActivity extends Activity {
 	
 	@Override
 	protected void onResume() {
+        RedTroops.getInstance(TestActivity.this).showBanner(TestActivity.this);
 		RedTroops.getInstance(this).onResume();
 		super.onResume();
 	}
+
+    public void NextActivity(View v) {
+        Intent i = new Intent(this, SecondActivity.class);
+        startActivity(i);
+    }
 
 	// This is implemented to disable calling onCreate when the screen orientation changes.
 	// Not a part of RedTroops SDK.

@@ -33,6 +33,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.RedTroops.RedTroopsSDK.Test.SecondActivity"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:configChanges="orientation|keyboardHidden|screenLayout" >
+        </activity>
+
         <!-- RedTroops SDK (MANDATORY) -->
         <activity
             android:name="com.RedTroops.RedTroopsSDK.Interstitial"

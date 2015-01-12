@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/welcome_text"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rounded_button_clicked"
+        android:onClick="NextActivity"
+        android:text="Next Activity and Close"
+        android:textColor="#FFffffff" />
+
+    <!--<com.RedTroops.RedTroopsSDK.NativeAd-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="1:1" />-->
+
+    <com.RedTroops.RedTroopsSDK.NativeAd
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="6:1"/>
+</LinearLayout>
+    </ScrollView>
