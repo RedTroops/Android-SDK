@@ -240,4 +240,4 @@ init: Running RedTroops SDK without push notification support.
 ```
 Then Google Play Services were not added to your project.
 
-**Refer to the test app [RedtroopsSDK-Test(Eclipse)](https://github.com/RedTroops/Android-SDK/tree/master/RedtroopsAndroidSDK-Test) or [Test(Android Studio)](https://github.com/RedTroops/Android-SDK/tree/master/Test) that is available alongside the SDK.**
+**Refer to the test apps [RedtroopsSDK-Test(Eclipse)](https://github.com/RedTroops/Android-SDK/tree/master/RedtroopsAndroidSDK-Test) or [Test(Android Studio)](https://github.com/RedTroops/Android-SDK/tree/master/Test) that are available alongside the SDK.**
