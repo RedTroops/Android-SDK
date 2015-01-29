@@ -26,7 +26,7 @@ Android Support Library must be added. This can be done by right-clicking on you
 
 Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
 
-1) Download [https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar](the SDK) from GitHub.
+1) Download [the SDK](https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar) from GitHub.
 
 2) Right-click on your project from the Package Explorer in Eclipse → Build Path → Configure Build Path.
 
@@ -40,7 +40,7 @@ Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
 
 Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
 
-1) Download [https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar](the SDK) from GitHub.
+1) Download [the SDK](https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar) from GitHub.
 
 2) Navigate to your project folder using your file explorer. Open the module folder and copy the SDK to your "libs" folder. Create the folder if it doesn't exist.
 
@@ -240,4 +240,4 @@ init: Running RedTroops SDK without push notification support.
 ```
 Then Google Play Services were not added to your project.
 
-**Refer to the test app [https://github.com/RedTroops/Android-SDK/tree/master/RedtroopsAndroidSDK-Test](RedtroopsSDK-Test(Eclipse)) or [https://github.com/RedTroops/Android-SDK/tree/master/Test](Test(Android Studio)) that is available alongside the SDK.**
+**Refer to the test app [RedtroopsSDK-Test(Eclipse)](https://github.com/RedTroops/Android-SDK/tree/master/RedtroopsAndroidSDK-Test) or [Test(Android Studio)](https://github.com/RedTroops/Android-SDK/tree/master/Test) that is available alongside the SDK.**
