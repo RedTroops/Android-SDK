@@ -74,7 +74,7 @@ In application tag, add the following activity, receiver, service, and Google Pl
 <!-- RedTroops SDK (MANDATORY) -->
 <activity
 android:name="com.RedTroops.RedTroopsSDK.Interstitial"
-android:configChanges="orientation|keyboardHidden|screenLayout"
+android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
 android:excludeFromRecents="true"
 android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 
@@ -103,16 +103,16 @@ android:exported="true" >
 
 <!-- Set the value to the Api Key obtained from developer.redtroops.com -->
 <meta-data android:name="api_key" android:value="your_api_key"/>
-<!-- Set the value to gcm followed by your sender ID you obtained from your Google Cloud Console project -->
+<!-- Optional: Set the value to gcm followed by your sender ID you obtained from your Google Cloud Console project -->
 <meta-data android:name="gcm_sender_id" android:value="gcm[your_gcm_sender_id]"/>
 <!-- End of RedTroops SDK (MANDATORY) -->
 ```
 
-*gcm_sender_id* is the Project Number that you obtained from Google Cloud Console when you created the project plus the word "gcm" added to its beginning. Example:
-`<meta-data android:name="gcm_sender_id" android:value="gcm330435028307"/>`
-
 *api_key* is the Api Key which is listed in the app details in My Apps at RedTroops' Developer website. Example: 
 `<meta-data android:name="api_key" android:value="OpjFdYiCEaEUsrLL8AAzpNYx19TSAY1d"/>`
+
+Optional: *gcm_sender_id* is the Project Number that you obtained from Google Cloud Console when you created the project plus the word "gcm" added to its beginning. Example:
+`<meta-data android:name="gcm_sender_id" android:value="gcm330435028307"/>`
 
 > Make sure you have added the meta-data needed for Google Play Services to enable Push Notification support `<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />`
 
@@ -239,5 +239,10 @@ if((extras.containsKey("sdk")&&
 init: Running RedTroops SDK without push notification support.
 ```
 Then Google Play Services were not added to your project.
+
+10) In order to not call onCreate and have the advertisements restarted on orientation change, add this to the activity tag in the manifest of every activity in which you show advertisements:
+```xml
+android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
+```
 
 **Refer to the test apps [RedtroopsSDK-Test(Eclipse)](https://github.com/RedTroops/Android-SDK/tree/master/RedtroopsAndroidSDK-Test) or [Test(Android Studio)](https://github.com/RedTroops/Android-SDK/tree/master/Test) that are available alongside the SDK.**
