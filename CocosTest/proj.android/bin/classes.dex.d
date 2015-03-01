@@ -22,8 +22,8 @@
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/classes/org/cocos2dx/cpp/AppActivity$2.class \
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/classes/org/cocos2dx/cpp/AppActivity$3.class \
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/classes/org/cocos2dx/cpp/AppActivity.class \
-/Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/dexedLibs/classes-36f646bdd5cbb5ac57be12573069c1ff.jar \
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/dexedLibs/classes-bf82a834d15cb8dd2edb4a44a858fbb6.jar \
+/Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/dexedLibs/classes-36f646bdd5cbb5ac57be12573069c1ff.jar \
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/dexedLibs/classes-5b179532b1d7bab961ae68dd08b3956a.jar \
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/dexedLibs/annotations-f4777e578838e57b422bd1974ab06b6a.jar \
 /Users/samertarazi/Developer/cocos_workspace/CocosTest2/CocosTest/proj.android/bin/dexedLibs/android-support-v4-dce2506ca632c2e2461ffcc7003e24f3.jar \
