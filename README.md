@@ -46,7 +46,7 @@ Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
 
 > Note libs folder is at the root of the module next to the folders "build" and "src".
 
-> You will not need to do step 3 if you have `{dir=libs, include=[*.jar]} Compile` in your dependencies.
+> You will not need to do step 3 if you have `compile fileTree(dir: 'libs', include: ['*.jar'])` in your dependencies.
 
 3) Open your module settings by right-clicking your module and choosing "Open Module Settings". Navigate to Dependencies tab. Press the + button to add a new dependency and choose File dependency. The SDK should be under your libs folder according to step 2.
 
