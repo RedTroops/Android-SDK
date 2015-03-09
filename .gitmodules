@@ -1,0 +1,3 @@
+[submodule "RedTroops-Android-Unity"]
+	path = RedTroops-Android-Unity
+	url = http://github.com/redtroops/RedTroops-Android-Unity.git
