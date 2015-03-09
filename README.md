@@ -78,26 +78,22 @@ android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|s
 android:excludeFromRecents="true"
 android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 
-<!-- GCM Receiver for RedTroops SDK -->
-<receiver
-android:name="com.RedTroops.RedTroopsSDK.gcm.GcmBroadcastReceiver"
-android:permission="com.google.android.c2dm.permission.SEND" >
-<intent-filter>
-<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
-<category android:name="<PACKAGE-NAME>" />
-</intent-filter>
-</receiver>
-
+<!-- RedTroops SDK (MANDATORY) -->
+<activity
+android:name="com.RedTroops.RedTroopsSDK.Interstitial"
+android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
+android:excludeFromRecents="true"
+android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService" />
-
-<!-- Install Referrer -->
 <receiver
-android:name="com.RedTroops.RedTroopsSDK.ReferrerReceiver"
+android:name="com.RedTroops.RedTroopsSDK.RedTroopsReceiver"
+android:permission="com.google.android.c2dm.permission.SEND"
 android:exported="true" >
 <intent-filter>
-<action android:name="com.android.vending.INSTALL_REFERRER" >
-</action>
+<action android:name="com.android.vending.INSTALL_REFERRER" />
+<action android:name="com.RedTroops.RECEIVED_PUSH" />
+<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+<category android:name="com.RedTroops.RedTroopsSDK.Test" />
 </intent-filter>
 </receiver>
 
