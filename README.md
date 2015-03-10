@@ -73,28 +73,28 @@ In application tag, add the following activity, receiver, service, and Google Pl
 ```xml
 <!-- RedTroops SDK (MANDATORY) -->
 <activity
-android:name="com.RedTroops.RedTroopsSDK.Interstitial"
-android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
-android:excludeFromRecents="true"
-android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    android:name="com.RedTroops.RedTroopsSDK.Interstitial"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
+    android:excludeFromRecents="true"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 
 <!-- RedTroops SDK (MANDATORY) -->
 <activity
-android:name="com.RedTroops.RedTroopsSDK.Interstitial"
-android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
-android:excludeFromRecents="true"
-android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    android:name="com.RedTroops.RedTroopsSDK.Interstitial"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
+    android:excludeFromRecents="true"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService" />
 <receiver
-android:name="com.RedTroops.RedTroopsSDK.RedTroopsReceiver"
-android:permission="com.google.android.c2dm.permission.SEND"
-android:exported="true" >
-<intent-filter>
-<action android:name="com.android.vending.INSTALL_REFERRER" />
-<action android:name="com.RedTroops.RECEIVED_PUSH" />
-<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-<category android:name="com.RedTroops.RedTroopsSDK.Test" />
-</intent-filter>
+    android:name="com.RedTroops.RedTroopsSDK.RedTroopsReceiver"
+    android:permission="com.google.android.c2dm.permission.SEND"
+    android:exported="true" >
+    <intent-filter>
+        <action android:name="com.android.vending.INSTALL_REFERRER" />
+        <action android:name="com.RedTroops.RECEIVED_PUSH" />
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name="com.RedTroops.RedTroopsSDK.Test" />
+    </intent-filter>
 </receiver>
 
 <!-- Set the value to the Api Key obtained from developer.redtroops.com -->
@@ -114,6 +114,9 @@ Optional: *gcm_sender_id* is the Project Number that you obtained from Google Cl
 
 ####Editing The Source Code
 
+>Important: 
+>If you are adding the SDK to a Unity project, please follow [this documentation](https://github.com/RedTroops-Android-SDK/wiki/Unity:-Android-SDK-Integration) for this section.
+
 1) In every activity's `onCreate` which you want to show ads in, call:
 ```java
 RedTroops.getInstance(this).init(initFinishedListener);
@@ -122,15 +125,15 @@ Where `initFinishedListener` is a listener to declare as follows:
 ```java	
 private initFinishListener initFinishedListener = new initFinishListener() {
 
-@Override
-public void onSuccess() {
-// TODO Do on init success. Most probably showInterstitialAd();
-}
+    @Override
+    public void onSuccess() {
+        // TODO Do on init success. Most probably showInterstitialAd();
+    }
 
-@Override
-public void onFail() {
-// TODO Do on init failure
-}
+    @Override
+    public void onFail() {
+        // TODO Do on init failure
+    }
 };
 ```
 
@@ -138,8 +141,8 @@ public void onFail() {
 ```java
 @Override
 protected void onPause() {
-RedTroops.getInstance(this).onPause();
-super.onPause();
+    RedTroops.getInstance(this).onPause();
+    super.onPause();
 }
 ```
 
@@ -147,8 +150,8 @@ super.onPause();
 ```java
 @Override
 protected void onResume() {
-RedTroops.getInstance(this).onResume();
-super.onResume();
+    RedTroops.getInstance(this).onResume();
+    super.onResume();
 }
 ```
 
@@ -157,7 +160,7 @@ super.onResume();
 
 4) To show an Interstitial Ad, call:
 ```java
-RedTroops.getInstance(this).showInterstitialAd(this);
+    RedTroops.getInstance(this).showInterstitialAd(this);
 ```
 
 You may call this in `initFinishedListener`'s `onSuccess()` so that it is made sure that the initialization has finished.
@@ -166,7 +169,7 @@ You may call this in `initFinishedListener`'s `onSuccess()` so that it is made s
 
 5) To show a Banner ad, call:
 ```java
-RedTroops.getInstance(this).showBanner(this);
+    RedTroops.getInstance(this).showBanner(this);
 ```
 
 You may call this in `initFinishedListener`'s `onSuccess()` so that it is made sure that the initialization has finished.
@@ -178,8 +181,8 @@ To ensure the banner does not block any views under it, add a padding of at leas
 6) To show a Native ad, in your layout (design), add the view using:
 ```xml
 <com.RedTroops.RedTroopsSDK.NativeAd
-android:layout_width="200dp"
-android:layout_height="200dp"/>
+    android:layout_width="200dp"
+    android:layout_height="200dp"/>
 ```
 
 The aspect ratios accepted are 1:1, 1:6 and 6:1. For example you can set the following sizes: 200dp:200dp, 50dp:300dp, and 300dp:50dp. If a wrong size is placed, an error will be shown.
@@ -223,10 +226,9 @@ setPushNotificationIcon: Error setting Push Notification icon
 
 8) If another GCM intent service is to be used along side the RedTroops SDK intent service, they can be differentiated by getting the boolean "sdk" which is true for RedTroops SDK push notifications. An example of how to implement this safely:
 ```java
-if((extras.containsKey("sdk")&&
-!Boolean.parseBoolean(extras.getString("sdk")))||
-!extras.containsKey("sdk"))
-//Handle the non-sdk intent.
+if((extras.containsKey("sdk")&&!Boolean.parseBoolean(extras.getString("sdk")))||
+    !extras.containsKey("sdk"))
+    //Handle the non-sdk intent.
 
 ```
 
