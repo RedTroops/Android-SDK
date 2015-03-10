@@ -115,7 +115,7 @@ Optional: *gcm_sender_id* is the Project Number that you obtained from Google Cl
 ####Editing The Source Code
 
 >Important: 
->If you are adding the SDK to a Unity project, please follow [this documentation](https://github.com/RedTroops-Android-SDK/wiki/Unity:-Android-SDK-Integration) for this section.
+>If you are adding the SDK to a Unity project, please follow [this documentation](https://github.com/RedTroops/Android-SDK/wiki/Unity:-Android-SDK-Integration) for this section.
 
 1) In every activity's `onCreate` which you want to show ads in, call:
 ```java
