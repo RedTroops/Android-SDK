@@ -4,3 +4,6 @@
 [submodule "RedTroops-Android-cocos2dx"]
 	path = RedTroops-Android-cocos2dx
 	url = http://github.com/redtroops/RedTroops-Android-cocos2dx.git
+[submodule "Unity-SDK"]
+        path = unity-sdk
+        url = http://github.com/redtroops/Unity-SDK.git
