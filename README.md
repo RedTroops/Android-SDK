@@ -77,13 +77,6 @@ In application tag, add the following activity, receiver, service, and Google Pl
     android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
     android:excludeFromRecents="true"
     android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-
-<!-- RedTroops SDK (MANDATORY) -->
-<activity
-    android:name="com.RedTroops.RedTroopsSDK.Interstitial"
-    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
-    android:excludeFromRecents="true"
-    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 <service android:name="com.RedTroops.RedTroopsSDK.gcm.GcmIntentService" />
 <receiver
     android:name="com.RedTroops.RedTroopsSDK.RedTroopsReceiver"
@@ -93,7 +86,7 @@ In application tag, add the following activity, receiver, service, and Google Pl
         <action android:name="com.android.vending.INSTALL_REFERRER" />
         <action android:name="com.RedTroops.RECEIVED_PUSH" />
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <category android:name="com.RedTroops.RedTroopsSDK.Test" />
+        <category android:name="<PACKAGE-NAME>" />
     </intent-filter>
 </receiver>
 
