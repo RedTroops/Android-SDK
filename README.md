@@ -1,12 +1,12 @@
 ![RedTroops Logo](http://redtroops.com/images/logo.png)
 
-#RedTroops SDK 2.0 for Android
+#RedTroops SDK 3.0 for Android
 
 **Requirements: Android 2.3.3+ (API 10)**
 
 ###Getting Started
 
-RedTroops SDK 2.0 currently features Push Notifications, Interstitial, Banner and Native ads. In order to have the push notifications ready for RedTroops, you must set up Google Cloud Messaging. 
+RedTroops SDK 3.0 currently features Push Notifications, Interstitial, Banner, Native, Audio and Video ads. In order to have the push notifications ready for RedTroops, you must set up Google Cloud Messaging. 
 
 ###Setting Up Google Cloud Messaging (Push Notifications)
 
@@ -22,9 +22,9 @@ You must have now Google Play Services library in your project. You must have a 
 
 Android Support Library must be added. This can be done by right-clicking on your project → Android Tools → Add Support Library. Android Private Libraries must be checked in Order and Export.
 
-###Eclipse - Setting Up RedTroops SDK 2.0 In Your Project
+###Eclipse - Setting Up RedTroops SDK 3.0 In Your Project
 
-Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
+Follow the steps below to get your RedTroops SDK 3.0 running using Eclipse IDE:
 
 1) Download [the SDK](https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar) from GitHub.
 
@@ -36,21 +36,19 @@ Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
 
 5) Clean and rebuild your project from Project -> Clean Project for the changes to be applied.
 
-###Android Studio - Setting Up RedTroops SDK 2.0 In Your Project
+###Android Studio - Setting Up RedTroops SDK 3.0 In Your Project [Gradle]
 
-Follow the steps below to get your RedTroops SDK 2.0 running using Eclipse IDE:
+Follow the steps below to get your RedTroops SDK 3.0 running using Android Studio IDE:
 
-1) Download [the SDK](https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar) from GitHub.
+1) Add this dependency to your build.gradle file:
 
-2) Navigate to your project folder using your file explorer. Open the module folder and copy the SDK to your "libs" folder. Create the folder if it doesn't exist.
+```gradle
+    dependencies {
+        compile 'com.redtroops.redtroops:sdk:3.0.+'
+    }
+```
 
-> Note libs folder is at the root of the module next to the folders "build" and "src".
-
-> You will not need to do step 3 if you have `compile fileTree(dir: 'libs', include: ['*.jar'])` in your dependencies.
-
-3) Open your module settings by right-clicking your module and choosing "Open Module Settings". Navigate to Dependencies tab. Press the + button to add a new dependency and choose File dependency. The SDK should be under your libs folder according to step 2.
-
-4) Sync your gradle files.
+2) Sync your gradle files.
 
 ###Adding SDK configuration to the manifest
 
@@ -74,6 +72,12 @@ In application tag, add the following activity, receiver, service, and Google Pl
 <!-- RedTroops SDK (MANDATORY) -->
 <activity
     android:name="com.RedTroops.RedTroopsSDK.Interstitial"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
+    android:excludeFromRecents="true"
+    android:hardwareAccelerated="true"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+<activity
+    android:name="com.RedTroops.RedTroopsSDK.VideoActivity"
     android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize"
     android:excludeFromRecents="true"
     android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
@@ -110,25 +114,23 @@ Optional: *gcm_sender_id* is the Project Number that you obtained from Google Cl
 >Important: 
 >If you are adding the SDK to a Unity project, please follow [this documentation](https://github.com/RedTroops/Android-SDK/wiki/Unity:-Android-SDK-Integration) for this section.
 
-1) In every activity's `onCreate` which you want to show ads in, call:
+1) To initialize the SDK, call the following:
 ```java
-RedTroops.getInstance(this).init(initFinishedListener);
-```
-Where `initFinishedListener` is a listener to declare as follows:
-```java	
-private initFinishListener initFinishedListener = new initFinishListener() {
+RedTroops.getInstance(this).init(new initFinishListener() {
 
-    @Override
-    public void onSuccess() {
+        @Override
+        public void onSuccess() {
         // TODO Do on init success. Most probably showInterstitialAd();
-    }
+        }
 
-    @Override
-    public void onFail() {
+        @Override
+        public void onFail() {
         // TODO Do on init failure
-    }
-};
+        }
+    }, new AdType().videoAd().bannerAd().audioAd().nativeAd().interstitialAd());
 ```
+
+`new AdType().videoAd().bannerAd().audioAd().nativeAd().interstitialAd())` informs the SDK that you wish to cache video, banner, audio, native and interstitial ads. Change this to your preference of ads that you will be showing inside your app.
 
 2) Add this to your onPause() on every activity (including ones you do not show ads in):
 ```java
@@ -150,7 +152,6 @@ protected void onResume() {
 
 > Steps 2 and 3 are mandatory to ensure proper SDK function and session time calculation.
 
-
 4) To show an Interstitial Ad, call:
 ```java
     RedTroops.getInstance(this).showInterstitialAd(this);
@@ -169,25 +170,51 @@ You may call this in `initFinishedListener`'s `onSuccess()` so that it is made s
 
 > Parameter passed to `showBanner` must be an activity, such as YourActivity.this. You may not use getApplicationContext() or any of its derivatives.
 
-To ensure the banner does not block any views under it, add a padding of at least 75dp to your Activity.
+To ensure the banner does not block any views under it, add a padding of at least 75dp to your layout.
 
 6) To show a Native ad, in your layout (design), add the view using:
 ```xml
 <com.RedTroops.RedTroopsSDK.NativeAd
-    android:layout_width="200dp"
+    android:layout_width="300dp"
     android:layout_height="200dp"/>
 ```
 
-The aspect ratios accepted are 1:1, 1:6 and 6:1. For example you can set the following sizes: 200dp:200dp, 50dp:300dp, and 300dp:50dp. If a wrong size is placed, an error will be shown.
+The aspect ratios accepted are 3:2 and 4:1. For example you can set the following sizes: 300dp:200dp, 200dp:50dp. If a wrong size is placed, an error will be shown.
 
 A Native Ad can also be added using `RedTroops.getInstance(this).getNativeAd(this)`. Example:
 ```java
 NativeAd nAd = RedTroops.getInstance(this).getNativeAd(this);
-LinearLayout.LayoutParams nAdparams = new LinearLayout.LayoutParams(600, 600);
+LinearLayout.LayoutParams nAdparams = new LinearLayout.LayoutParams(600, 400);
 nAdparams.gravity = Gravity.CENTER_HORIZONTAL;
 nAd.setLayoutParams(nAdparams);
 mainView.addView(nAd);
 ```
+
+7) To play an audio ad, call:
+```java
+RedTroops.getInstance(this).playAudioAd(new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            // TODO: On completion do the following
+            Toast.makeText(TestActivity.this, "Media stopped", Toast.LENGTH_SHORT).show();
+        }
+    });
+```
+
+> The `OnCompletionListener` can be set to null.
+
+8) To play a video ad, call:
+```java
+    RedTroops.getInstance(this).playVideoAd(this, new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            // TODO: On completion do the following
+            Toast.makeText(TestActivity.this, "Media stopped", Toast.LENGTH_SHORT).show();
+        }
+    });
+```
+
+> The `OnCompletionListener` can be set to null.
 
 ###More Options
 
