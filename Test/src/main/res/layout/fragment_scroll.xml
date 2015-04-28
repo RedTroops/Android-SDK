@@ -1,0 +1,128 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_margin="5dp"
+android:orientation="vertical" >
+
+<LinearLayout
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/redtroops_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/welcome_text"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/first_text"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnInterstitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_button_clicked"
+        android:textColor="#FFffffff"
+        android:onClick="ShowInterstitial"
+        android:text="Show Interstitial Ad" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/second_text"
+        android:layout_marginBottom="30dp"
+        android:textSize="24sp"/>
+
+    <com.RedTroops.RedTroopsSDK.NativeAd
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="133.3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="3:2" />
+
+    <com.RedTroops.RedTroopsSDK.NativeAd
+        android:layout_gravity="center"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="4:1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/audio_text"
+        android:layout_marginBottom="30dp"
+        android:textSize="24sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Audio Advertisement"
+        android:background="@drawable/rounded_button_clicked"
+        android:textColor="#FFffffff"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:onClick="PlayAudioAdvertisement"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Video Advertisement"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button_clicked"
+        android:textColor="#FFffffff"
+        android:layout_marginBottom="30dp"
+        android:onClick="PlayVideoAdvertisement"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/third_text"
+        android:textSize="24sp"
+        android:layout_marginBottom="85dp"/>
+
+</LinearLayout>
+
+</ScrollView>
