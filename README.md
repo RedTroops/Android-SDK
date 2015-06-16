@@ -1,12 +1,12 @@
 ![RedTroops Logo](http://redtroops.com/images/logo.png)
 
-#RedTroops SDK 3.0 for Android
+#RedTroops SDK 3.1 for Android
 
 **Requirements: Android 2.3.3+ (API 10)**
 
 ###Getting Started
 
-RedTroops SDK 3.0 currently features Push Notifications, Interstitial, Banner, Native, Audio and Video ads. In order to have the push notifications ready for RedTroops, you must set up Google Cloud Messaging. 
+RedTroops SDK 3.1 currently features Push Notifications, Interstitial, Banner, Native, Audio and Video ads. In order to have the push notifications ready for RedTroops, you must set up Google Cloud Messagin. 
 
 ###Setting Up Google Cloud Messaging (Push Notifications)
 
@@ -22,9 +22,9 @@ You must have now Google Play Services library in your project. You must have a 
 
 Android Support Library must be added. This can be done by right-clicking on your project → Android Tools → Add Support Library. Android Private Libraries must be checked in Order and Export.
 
-###Eclipse - Setting Up RedTroops SDK 3.0 In Your Project
+###Eclipse - Setting Up RedTroops SDK 3.1 In Your Project
 
-Follow the steps below to get your RedTroops SDK 3.0 running using Eclipse IDE:
+Follow the steps below to get your RedTroops SDK 3.1 running using Eclipse IDE:
 
 1) Download [the SDK](https://github.com/RedTroops/Android-SDK/raw/master/redtroops.jar) from GitHub.
 
@@ -36,9 +36,9 @@ Follow the steps below to get your RedTroops SDK 3.0 running using Eclipse IDE:
 
 5) Clean and rebuild your project from Project -> Clean Project for the changes to be applied.
 
-###Android Studio - Setting Up RedTroops SDK 3.0 In Your Project [Gradle]
+###Android Studio - Setting Up RedTroops SDK 3.1 In Your Project [Gradle]
 
-Follow the steps below to get your RedTroops SDK 3.0 running using Android Studio IDE:
+Follow the steps below to get your RedTroops SDK 3.1 running using Android Studio IDE:
 
 1) Add this dependency to your build.gradle file:
 
