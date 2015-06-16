@@ -44,7 +44,7 @@ Follow the steps below to get your RedTroops SDK 3.0 running using Android Studi
 
 ```gradle
     dependencies {
-        compile 'com.redtroops.redtroops:sdk:3.0.+'
+        compile 'com.redtroops.redtroops:sdk:3.1.+'
     }
 ```
 
